@@ -1,7 +1,19 @@
 <template>
-    <div>
-        <h1>Hotels</h1>
-    </div>
+    <section>
+        <ul>
+            <li v-for="hotel in hotels">
+                <h1>{{ hotel.name }}</h1>
+                <p>{{ hotel.price }}</p>
+            </li>
+        </ul>
+    </section>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps({
+    hotels: {
+        type: Array,
+        required: true,
+    },
+});
+</script>
