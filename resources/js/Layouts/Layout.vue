@@ -1,9 +1,13 @@
 <template>
-  <div class="container mx-auto">
-    <main>
+  <div>
+    <Header />
+
+    <main class="content">
       <slot />
     </main>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Header from "../Components/Header.vue";
+</script>
