@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HotelController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,5 +16,9 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-  return Inertia::render('Hotels/Index');
+  return redirect('hotels/');
 });
+
+
+// Hotels routes 
+Route::resource('hotels', HotelController::class);
