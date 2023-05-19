@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .content {
-  @apply container mx-auto w-[90%] sm:w-full;
+  @apply container mx-auto px-4;
 }
