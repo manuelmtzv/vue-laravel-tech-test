@@ -13,7 +13,7 @@ class HotelController extends Controller
    */
   public function index()
   {
-    $hotels = Hotel::all();
+    $hotels = Hotel::all()->load(['city']);
 
     return Inertia::render('Hotels/Index', compact('hotels'));
   }
