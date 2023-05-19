@@ -2,10 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Hotel;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class City extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  public function hotels()
+  {
+    return $this->hasMany(Hotel::class);
+  }
 }
