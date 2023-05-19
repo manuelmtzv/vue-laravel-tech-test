@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SaveHotelRequest;
+use Inertia\Inertia;
 use App\Models\Hotel;
+use App\Http\Requests\SaveHotelRequest;
 
 class HotelController extends Controller
 {
