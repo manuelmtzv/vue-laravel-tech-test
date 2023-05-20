@@ -21,9 +21,7 @@
         </p>
         <p class="hotels__property hotels__property--price">
           Price:
-          <span>
-            {{ hotel.price }}
-          </span>
+          <span> {{ hotel.price }} MXN </span>
         </p>
       </div>
     </a>

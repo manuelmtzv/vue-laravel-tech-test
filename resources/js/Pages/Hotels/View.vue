@@ -16,9 +16,7 @@
       </p>
       <p class="hotel__property hotel__property--price">
         Price:
-        <span>
-          {{ hotel.price }}
-        </span>
+        <span> {{ hotel.price }} MXN </span>
       </p>
       <p class="hotel__description">
         Description:
