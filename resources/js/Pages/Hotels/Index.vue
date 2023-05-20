@@ -13,11 +13,11 @@
       />
       <div class="hotels__details">
         <h3 class="hotels__title">{{ hotel.name }}</h3>
-        <p class="hotels__property hotels__property--rating">
-          Rating: <span>{{ hotel.rating }}</span>
-        </p>
         <p class="hotels__property">
           City: <span>{{ hotel.city.name }}</span>
+        </p>
+        <p class="hotels__property hotels__property--rating">
+          Rating: <span>{{ hotel.rating }}</span>
         </p>
         <p class="hotels__property hotels__property--price">
           Price:
@@ -47,7 +47,7 @@ const props = defineProps({
   @apply flex flex-col border rounded-lg hover:shadow-md hover:bg-gray-100 transition-all duration-300 cursor-pointer;
 }
 .hotels__image {
-  @apply w-full;
+  @apply w-full aspect-square;
 }
 .hotels__details {
   @apply flex flex-col gap-2 h-full p-2 justify-between;
