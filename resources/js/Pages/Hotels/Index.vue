@@ -30,17 +30,7 @@
   </section>
 </template>
 
-<script>
-import Layout from "../../Layouts/Layout.vue";
-
-export default {
-  layout: Layout,
-};
-</script>
-
 <script setup>
-import Layout from "../../Layouts/Layout.vue";
-
 const props = defineProps({
   hotels: {
     type: Array,
