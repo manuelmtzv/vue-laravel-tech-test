@@ -47,7 +47,7 @@ const props = defineProps({
   @apply flex flex-col border rounded-lg hover:shadow-md hover:bg-gray-100 transition-all duration-300 cursor-pointer;
 }
 .hotels__image {
-  @apply w-full aspect-square;
+  @apply w-full object-cover aspect-square;
 }
 .hotels__details {
   @apply flex flex-col gap-2 h-full p-2 justify-between;
