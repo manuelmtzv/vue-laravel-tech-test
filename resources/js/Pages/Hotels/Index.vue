@@ -1,4 +1,8 @@
 <template>
+  <nav>
+    <a class="add-hotel" :href="route('hotels.create')">Add Hotel</a>
+  </nav>
+
   <section class="hotels">
     <a
       :href="route('hotels.show', hotel)"
@@ -38,6 +42,12 @@ const props = defineProps({
 </script>
 
 <style scoped lang="css">
+nav {
+  @apply w-full;
+}
+.add-hotel {
+  @apply w-fit block ml-auto p-2 mb-4 border rounded-md hover:bg-green-300 transition-colors duration-300;
+}
 .hotels {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4;
 }
