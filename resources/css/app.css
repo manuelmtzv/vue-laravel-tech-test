@@ -5,3 +5,24 @@
 .content {
   @apply container mx-auto w-[90%] lg:w-[80%] xl:w-[70%];
 }
+
+/* Form */
+.form {
+  @apply flex flex-col gap-4 p-4 shadow-md rounded-md;
+}
+.label {
+  @apply flex flex-col gap-2 w-full;
+}
+.input {
+  @apply border;
+}
+.input,
+.select {
+  @apply p-2 rounded-md;
+}
+.error {
+  @apply text-red-600;
+}
+.submit {
+  @apply w-fit p-2 border rounded-md ml-auto hover:bg-green-200 transition-colors duration-300;
+}
