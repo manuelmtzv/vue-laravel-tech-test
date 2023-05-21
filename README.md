@@ -1,66 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Prueba técnica - Instrucciones
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Usando las siguientes tecnologías, completa los siguientes puntos:
 
-## About Laravel
+- Laravel 9+
+- MySQL 8
+- Vue 3
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Integrar los datos del excel compartido en una base de datos usando migraciones y seeders.
+2. Utilizando rutas/modelos/controladores, realizar un CRUD con los datos anteriores.
+3. La vista debe de ser mostrada en el framework de JS que más sepas usar. Sólo debe de mostrar los datos, ya sea en tabla o listados.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Puntos extra
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- +2 La vista es mostrada en Vue JS.
+- +2 Saber usar Composition API de Vue JS.
+- +1 Buenas prácticas a la hora de codificar y declarar variables.
+- +1 Usar Tailwindcss en la vista.
+- +1 Crear rutas API para el CRUD.
+- +1 Uso de conventional commits.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Resultados
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+El resultado fue un proyecto con Laravel y Vue que muestra un listado de hoteles de la base de datos, esto usando CSS Grid. Pero no se limita en sólo eso, si no cumple con lo necesario para ser un CRUD completo y funcional de la entidad Hotels:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Cuenta con un botón "Add hotel" en la parte superior de la página Index que redirige al usuario a un formulario para crear una nueva entrada de hotel.
+- Cada una de las entradas de hoteles son en si mismas enlaces que llevan a la página View, la cual es una página que muestra de mejor forma la imágen e información del hotel seleccionado.
+- Además de su imágen e información, en cada una de las vistas individuales de los hoteles se encuentra una botonera en la parte inferior derecha, la cual da acceso a las siguientes acciones:
+  - Edit: este botón redirige al usuario a una página con un formulario que le permite modificar los valores de la entrada del hotel que estaba viendo.
+  - Delete: este botón elimina la entrada del hotel que el usuario estaba visitando y lo redirige a la página de inicio con el listado de hoteles restantes.
 
-## Laravel Sponsors
+### Características adicionales
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Tanto el método store() como update() del HotelController cuentan con una verificación de datos hecha por un archivo de tipo Request llamado SaveHotelRequest.php.
+- Aunado al punto anterior, tanto el formulario de creación como el de edición de entradas de hoteles cuentan con manejadores de errores y los muestran al usuario cuando este introduce un valor no válido o nulo.
+- Normalicé la tabla de datos que me compartieron y la dividí en dos entidades: Hotels y Cities. Estandaricé la información y corregí algunos typos e inconsistencias que había dentro de ella, para posteriormente convertir ambas entidades en archivos .csv. La información es obtenida por un seeder para cada entidad, pero se lee directamente de los .csv que creé, esto pensando en la escalabilidad y porque no es buena práctica (ni eficiente) tener que escribir cada entrada directamente en el seeder.
+- Logré implementar tando Inertia como Ziggy en el proyecto, tanto para crear enlaces a rutas que renderizan vistas como para aquellas que ejecutan peticiones con parámetros.
+- Todas las vistas son responsivas y esto lo hice con Flex, Grid y breakpoints, todo con Tailwindcss.
+- Seguí la convención BEM para crear consistencia en los nombres de las clases de los componentes.
+- Sé que es parte principal del ejercició en sí, pero me gustaría mencionar que apliqué la convención de conventional commits y publiqué commits lo más atómicos posible.
 
-### Premium Partners
+### Oportunidades de mejora
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Convertir a componentes ciertos elementos que se repiten, especialmente los relacionados a formularios.
+- Crear clases utilitarias generales para los componentes que comparten características, para evitar la duplicación de código CSS/Tailwindcss.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Instalación
 
-## Code of Conduct
+A continuación, muestro el procedimiento y comandos necesarios para instalar dependencias y configurar el proyecto.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### .env
 
-## Security Vulnerabilities
+Copiar el archivo `.env.example` y renombrarlo a `.env`.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### Base de datos
 
-## License
+Por defecto, la base de datos que utiliza el proyecto se llama `"tech_test_db"`, por lo que es necesario crearla en MySQL dentro de su sistema.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Servidor
+
+Instalar dependencias de Laravel:
+`λ composer install`
+
+Correr migraciones y seeders:
+`λ php artisan migrate --seed`
+
+Crear un key para la aplicación:
+`λ php artisan key:generate`
+
+#### Cliente
+
+Instalar dependencias de Node:
+`λ npm run install`
+
+## Ejecución
+
+Para ejecutar el proyecto, se deben de realizar los siguientes comandos y pasos.
+
+#### Servidor
+
+Inicializar el servidor de backend:
+`λ php artisan serve`
+
+#### Cliente
+
+Inicializar servidor de desarrollo:
+`λ npm run dev`
