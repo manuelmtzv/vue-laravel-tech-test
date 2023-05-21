@@ -1,7 +1,5 @@
 <template>
   <form class="form" ref="form" @submit.prevent="submit" method="POST">
-    <!-- route('hotels.store') -->
-
     <h1 class="form__title">Add hotel</h1>
 
     <label class="label" for="name">
@@ -85,7 +83,7 @@ function getValues() {
 }
 
 function submit() {
-  router.post("/hotels", getValues());
+  router.post(route("hotels.store", getValues()));
 }
 </script>
 
@@ -96,7 +94,6 @@ function submit() {
 .form__nav {
   @apply flex items-center justify-between gap-4;
 }
-
 /* return button */
 .return {
   @apply w-fit p-2 rounded-md border hover:bg-blue-200 transition-colors duration-300;
