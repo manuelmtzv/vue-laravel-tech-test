@@ -32,9 +32,10 @@
   </article>
 
   <nav class="hotel__nav">
-    <a :href="route('hotels.index')" class="return">Return</a>
+    <a :href="route('hotels.index')" class="button return">Return</a>
 
     <div>
+      <a :href="route('hotels.edit', hotel)" class="button edit">Edit</a>
       <DeleteHotelForm :hotel="hotel" />
     </div>
   </nav>
@@ -88,7 +89,16 @@ const props = defineProps({
 .hotel__nav {
   @apply flex mt-4 items-center justify-between;
 }
+.hotel__nav div {
+  @apply flex gap-2;
+}
+.button {
+  @apply inline-block p-2 text-lg rounded-md border transition-colors duration-300;
+}
 .return {
-  @apply inline-block p-2 text-lg rounded-md border hover:bg-blue-200 transition-colors duration-300;
+  @apply hover:bg-blue-200;
+}
+.edit {
+  @apply hover:bg-yellow-200;
 }
 </style>
