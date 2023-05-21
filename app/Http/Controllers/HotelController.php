@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\Hotel;
 use App\Http\Requests\SaveHotelRequest;
+use App\Models\City;
 
 class HotelController extends Controller
 {
@@ -23,7 +24,9 @@ class HotelController extends Controller
    */
   public function create()
   {
-    //
+    $cities = City::all();
+
+    return Inertia::render('Hotels/Create', compact('cities'));
   }
 
   /**
@@ -39,17 +42,22 @@ class HotelController extends Controller
   /**
    * Display the specified resource.
    */
-  public function show(string $id)
+  public function show(Hotel $hotel)
   {
-    //
+    $hotel->load(['city']);
+
+    return Inertia::render('Hotels/View', compact('hotel'));
   }
 
   /**
    * Show the form for editing the specified resource.
    */
-  public function edit(string $id)
+  public function edit(Hotel $hotel)
   {
-    //
+    $hotel->load(['city']);
+    $cities = City::all();
+
+    return Inertia::render('Hotels/Edit', compact('hotel', 'cities'));
   }
 
   /**
