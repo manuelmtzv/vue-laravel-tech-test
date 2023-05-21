@@ -18,6 +18,8 @@
         Price:
         <span> {{ hotel.price }} MXN </span>
       </p>
+
+      <!-- This field is merely for visual purposes. It is not a database field and is present in all hotel entries. -->
       <p class="hotel__description">
         Description:
         <span>
@@ -29,10 +31,18 @@
     </div>
   </article>
 
-  <a :href="route('hotels.index')" class="return">Return</a>
+  <nav class="hotel__nav">
+    <a :href="route('hotels.index')" class="return">Return</a>
+
+    <div>
+      <DeleteHotelForm :hotel="hotel" />
+    </div>
+  </nav>
 </template>
 
 <script setup>
+import DeleteHotelForm from "../../Components/DeleteHotelForm.vue";
+
 const props = defineProps({
   hotel: {
     type: Object,
@@ -75,9 +85,10 @@ const props = defineProps({
 .hotel__description span {
   @apply font-normal;
 }
-
-/* return button */
+.hotel__nav {
+  @apply flex mt-4 items-center justify-between;
+}
 .return {
-  @apply inline-block p-2 mt-4 text-lg rounded-md border hover:bg-blue-200 transition-colors duration-300;
+  @apply inline-block p-2 text-lg rounded-md border hover:bg-blue-200 transition-colors duration-300;
 }
 </style>
