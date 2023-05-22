@@ -34,9 +34,9 @@ class HotelController extends Controller
    */
   public function store(SaveHotelRequest $request)
   {
-    Hotel::create($request->validated());
+    $hotel = Hotel::create($request->validated());
 
-    return to_route('hotels.index');
+    return to_route('hotels.show', $hotel);
   }
 
   /**
@@ -67,7 +67,7 @@ class HotelController extends Controller
   {
     $hotel->update($request->validated());
 
-    return to_route('hotels.index');
+    return to_route('hotels.show', $hotel);
   }
 
   /**
