@@ -61,7 +61,7 @@
     </label>
 
     <nav class="form__nav">
-      <a class="return" :href="route('hotels.index')">Return</a>
+      <a class="return" :href="route('hotels.show', hotel)">Return</a>
 
       <button class="submit" type="submit">Submit</button>
     </nav>
