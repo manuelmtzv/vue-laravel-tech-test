@@ -4,7 +4,7 @@
       <h1 class="header__logo">Technical test Jr.</h1>
 
       <nav class="header__nav">
-        <a href="#" class="header__link">Hotels</a>
+        <a :href="route('hotels.index')" class="header__link">Hotels</a>
       </nav>
     </div>
   </header>
