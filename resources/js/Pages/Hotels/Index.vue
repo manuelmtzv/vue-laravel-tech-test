@@ -3,11 +3,12 @@
     <a class="add-hotel" :href="route('hotels.create')">Add Hotel</a>
   </nav>
 
-  <section class="hotels">
+  <section v-if="hotels.length > 1" class="hotels">
     <a
+      v-for="hotel in sortedHotels"
       :href="route('hotels.show', hotel)"
-      v-for="hotel in hotels"
       class="hotels__entry"
+      :key="hotel.id"
     >
       <img
         :src="hotel.image"
@@ -30,14 +31,23 @@
       </div>
     </a>
   </section>
+
+  <p v-else>No hotels to show</p>
 </template>
 
 <script setup>
+import { computed } from "vue";
+
 const props = defineProps({
   hotels: {
     type: Array,
     required: true,
   },
+  errors: Object,
+});
+
+const sortedHotels = computed(() => {
+  return props.hotels.sort((a, b) => a.created_at < b.created_at);
 });
 </script>
 
