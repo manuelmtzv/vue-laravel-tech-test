@@ -49,6 +49,7 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  errors: Object,
 });
 </script>
 
