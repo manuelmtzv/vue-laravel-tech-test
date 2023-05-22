@@ -40,6 +40,7 @@ El resultado fue un proyecto con Laravel y Vue que muestra un listado de hoteles
 - Todas las vistas son responsivas y esto lo hice con Flex, Grid y breakpoints, todo con Tailwindcss.
 - Seguí la convención BEM para crear consistencia en los nombres de las clases de los componentes.
 - Sé que es parte principal del ejercició en sí, pero me gustaría mencionar que apliqué la convención de conventional commits y publiqué commits lo más atómicos posible.
+- Creé el controlador del CRUD de Hotels para el API del sistema, así como establecer la definición de rutas. Las rutas cuentan con verificación de datos y retornan diferentes estados HTTP acorde al tipo de retorno.
 
 ### Oportunidades de mejora
 
