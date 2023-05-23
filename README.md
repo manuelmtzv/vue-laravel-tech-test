@@ -75,7 +75,7 @@ Crear un key para la aplicación:
 #### Cliente
 
 Instalar dependencias de Node:
-`λ npm run install`
+`λ npm install`
 
 ## Ejecución
 
